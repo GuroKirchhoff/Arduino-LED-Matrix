@@ -1,0 +1,180 @@
+/*
+Arduino LED-Matrix Achtfach Sketch
+by Reinhard Freudenreich, Germany, 
+created 06/04/2015
+*/
+
+#include "LedControl.h" //  need the library
+LedControl lc=LedControl(12,11,10,8);  
+
+// pin 12 is connected to the MAX7219 pin 1
+// pin 11 is connected to the CLK pin 13
+// pin 10 is connected to LOAD pin 12
+// 1 as we are only using 1 MAX7219
+
+void setup()
+{
+  lc.shutdown(0,false);// turn off power saving, enables display
+  lc.setIntensity(0,8);// sets brightness (0~15 possible values)
+  lc.clearDisplay(0);// clear screen
+
+  lc.shutdown(1,false);// turn off power saving, enables display
+  lc.setIntensity(1,8);// sets brightness (0~15 possible values)
+  lc.clearDisplay(1);// clear screen 
+
+  lc.shutdown(2,false);// turn off power saving, enables display
+  lc.setIntensity(2,8);// sets brightness (0~15 possible values)
+  lc.clearDisplay(2);// clear screen  
+
+  lc.shutdown(3,false);// turn off power saving, enables display
+  lc.setIntensity(3,8);// sets brightness (0~15 possible values)
+  lc.clearDisplay(3);// clear screen 
+
+  lc.shutdown(4,false);// turn off power saving, enables display
+  lc.setIntensity(4,8);// sets brightness (0~15 possible values)
+  lc.clearDisplay(4);// clear screen  
+
+  lc.shutdown(5,false);// turn off power saving, enables display
+  lc.setIntensity(5,8);// sets brightness (0~15 possible values)
+  lc.clearDisplay(5);// clear screen
+
+  lc.shutdown(6,false);// turn off power saving, enables display
+  lc.setIntensity(6,8);// sets brightness (0~15 possible values)
+  lc.clearDisplay(6);// clear screen    
+
+  lc.shutdown(7,false);// turn off power saving, enables display
+  lc.setIntensity(7,8);// sets brightness (0~15 possible values)
+  lc.clearDisplay(7);// clear screen                   
+}
+
+void loop()
+{
+  for (int col=0; col<8; col++)
+  {
+    for (int row=0; row<8; row++)
+    {
+      lc.setLed(0,col,row,true); // turns on LED at col, row
+      lc.setLed(1,col,row,false); // turns on LED at col, row
+      lc.setLed(2,col,row,false); // turns on LED at col, row
+      lc.setLed(3,col,row,false); // turns on LED at col, row
+      lc.setLed(4,col,row,false); // turns on LED at col, row
+      lc.setLed(5,col,row,false); // turns on LED at col, row
+      lc.setLed(6,col,row,false); // turns on LED at col, row
+      lc.setLed(7,col,row,false); // turns on LED at col, row      
+      delayMicroseconds(5);       
+    }
+}
+  
+  for (int col=0; col<8; col++)
+  {
+    for (int row=0; row<8; row++)
+    {
+      lc.setLed(0,col,row,false); // turns on LED at col, row
+      lc.setLed(1,col,row,true); // turns on LED at col, row
+      lc.setLed(2,col,row,false); // turns on LED at col, row
+      lc.setLed(3,col,row,false); // turns on LED at col, row
+      lc.setLed(4,col,row,false); // turns on LED at col, row
+      lc.setLed(5,col,row,false); // turns on LED at col, row
+      lc.setLed(6,col,row,false); // turns on LED at col, row
+      lc.setLed(7,col,row,false); // turns on LED at col, row      
+      delayMicroseconds(5);       
+    }
+}
+  
+  for (int col=0; col<8; col++)
+  {
+    for (int row=0; row<8; row++)
+    {
+      lc.setLed(0,col,row,false); // turns on LED at col, row
+      lc.setLed(1,col,row,false); // turns on LED at col, row
+      lc.setLed(2,col,row,true); // turns on LED at col, row
+      lc.setLed(3,col,row,false); // turns on LED at col, row
+      lc.setLed(4,col,row,false); // turns on LED at col, row
+      lc.setLed(5,col,row,false); // turns on LED at col, row
+      lc.setLed(6,col,row,false); // turns on LED at col, row
+      lc.setLed(7,col,row,false); // turns on LED at col, row        
+      delayMicroseconds(5);    
+    }
+}  
+  
+  for (int col=0; col<8; col++)
+  {
+    for (int row=0; row<8; row++)
+    {
+      lc.setLed(0,col,row,false); // turns on LED at col, row
+      lc.setLed(1,col,row,false); // turns on LED at col, row
+      lc.setLed(2,col,row,false); // turns on LED at col, row
+      lc.setLed(3,col,row,true); // turns on LED at col, row
+      lc.setLed(4,col,row,false); // turns on LED at col, row
+      lc.setLed(5,col,row,false); // turns on LED at col, row
+      lc.setLed(6,col,row,false); // turns on LED at col, row
+      lc.setLed(7,col,row,false); // turns on LED at col, row         
+      delayMicroseconds(5); 
+    }
+}  
+ 
+ for (int col=0; col<8; col++)
+  {
+    for (int row=0; row<8; row++)
+    {
+      lc.setLed(0,col,row,false); // turns on LED at col, row
+      lc.setLed(1,col,row,false); // turns on LED at col, row
+      lc.setLed(2,col,row,false); // turns on LED at col, row
+      lc.setLed(3,col,row,false); // turns on LED at col, row
+      lc.setLed(4,col,row,true); // turns on LED at col, row
+      lc.setLed(5,col,row,false); // turns on LED at col, row
+      lc.setLed(6,col,row,false); // turns on LED at col, row
+      lc.setLed(7,col,row,false); // turns on LED at col, row          
+      delayMicroseconds(5); 
+    } 
+}
+
+ for (int col=0; col<8; col++)
+ {
+    for (int row=0; row<8; row++)
+    {    
+      lc.setLed(0,col,row,false); // turns on LED at col, row
+      lc.setLed(1,col,row,false); // turns on LED at col, row
+      lc.setLed(2,col,row,false); // turns on LED at col, row
+      lc.setLed(3,col,row,false); // turns on LED at col, row
+      lc.setLed(4,col,row,false); // turns on LED at col, row
+      lc.setLed(5,col,row,true); // turns on LED at col, row
+      lc.setLed(6,col,row,false); // turns on LED at col, row
+      lc.setLed(7,col,row,false); // turns on LED at col, row         
+      delayMicroseconds(5); 
+    }
+}  
+ 
+ for (int col=0; col<8; col++)
+ {
+    for (int row=0; row<8; row++)
+    {     
+      lc.setLed(0,col,row,false); // turns on LED at col, row
+      lc.setLed(1,col,row,false); // turns on LED at col, row
+      lc.setLed(2,col,row,false); // turns on LED at col, row
+      lc.setLed(3,col,row,false); // turns on LED at col, row
+      lc.setLed(4,col,row,false); // turns on LED at col, row
+      lc.setLed(5,col,row,false); // turns on LED at col, row
+      lc.setLed(6,col,row,true); // turns on LED at col, row
+      lc.setLed(7,col,row,false); // turns on LED at col, row         
+      delayMicroseconds(5); 
+    }
+}   
+  
+ for (int col=0; col<8; col++)
+ {
+    for (int row=0; row<8; row++)
+    {      
+      lc.setLed(0,col,row,false); // turns on LED at col, row
+      lc.setLed(1,col,row,false); // turns on LED at col, row
+      lc.setLed(2,col,row,false); // turns on LED at col, row
+      lc.setLed(3,col,row,false); // turns on LED at col, row
+      lc.setLed(4,col,row,false); // turns on LED at col, row
+      lc.setLed(5,col,row,false); // turns on LED at col, row
+      lc.setLed(6,col,row,false); // turns on LED at col, row
+      lc.setLed(7,col,row,true); // turns on LED at col, row         
+      delayMicroseconds(5);  
+    }
+  }
+} 
+ 
